@@ -25,7 +25,7 @@ puts "</form><hr>"
 def get_elements_list(el)
 	elements_list = ""
 	el.xpath("ElementRef").each do |e_ref|
-		   elements_list +=  "<A NAME='#{e_ref.attribute("RefId").text}'><a href='index.rb?mvd=#{$mvdxml}&e_id=#{e_ref.attribute("RefId").text}##{e_ref.attribute("RefId").text}'>" + $elements[e_ref.attribute("RefId").text] + "</a></br>"
+		   elements_list +=  "<A NAME='#{e_ref.attribute("RefId").text}'><a href='index.rb?file=#{$file}&e_id=#{e_ref.attribute("RefId").text}##{e_ref.attribute("RefId").text}'>" + $elements[e_ref.attribute("RefId").text] + "</a></br>"
 	if $e_id ==  e_ref.attribute("RefId").text or $show_all.to_s == "on"
 		if $elements_properties[e_ref.attribute("RefId").text]
 				elements_list += "<ul>" 
